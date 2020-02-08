@@ -11,6 +11,10 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
+Assets
+  * Bulma CSS
+  * Tailwind CSS
+
 ## Learn more
 
   * Official website: http://www.phoenixframework.org/
@@ -18,3 +22,11 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Docs: https://hexdocs.pm/phoenix
   * Mailing list: http://groups.google.com/group/phoenix-talk
   * Source: https://github.com/phoenixframework/phoenix
+
+## Screenshots
+
+  * Chapter 3 Ending:
+    * User List:  
+    ![Chapter 3 Ending](/user_list_3.png)
+    * User Details:  
+    ![Chapter 3 Ending](/user_details_3.png)
