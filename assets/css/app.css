@@ -1,0 +1,4 @@
+/* This file is for your main application css. */
+@import "https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css";
+@import "https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css";
+/* @import "./phoenix.css"; */
