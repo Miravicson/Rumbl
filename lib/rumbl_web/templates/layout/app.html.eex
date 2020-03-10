@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ready to Rumblllll!</title>
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"> -->
     <link rel="stylesheet" href="<%= Routes.static_path(@conn,
     "/css/app.css")%>"/>
     <script
@@ -12,20 +11,37 @@
       src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
     ></script>
   </head>
-  <body class="bg-purple-100 min-h-screen">
-    <section class="hero bg-purple-700 text-white">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title text-white">
-            <%= link "Rumbl.IO", to: Routes.user_path(@conn, :index) %>
-          </h1>
-          <p class="subtitle text-white">Rumbl Out Loud!</p>
-        </div>
-      </div>
-    </section>
-    <section class="container p-15 mx-auto">
+  <body class="">
+    <nav>
+      <span class="nav__brand"
+        ><%= link "Rumbl.IO", to: Routes.page_path(@conn, :index) %></span
+      >
+      <ul>
+        <li><%= link "Create User", to: Routes.user_path(@conn, :new) %></li>
+        <li><%= link "Lists", to: Routes.user_path(@conn, :index) %></li>
+        <%= if @current_user do %>
+        <li><%= @current_user.username %></li>
+        <li>
+          <%= link "Log out", to: Routes.session_path(@conn, :delete,
+          @current_user), method: "delete" %>
+        </li>
+        <% else %>
+         <li><%= link "Register", to: Routes.user_path(@conn, :new) %></li>
+         <li><%= link "Log in", to: Routes.session_path(@conn, :new) %></li>
+        <% end %>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <p class="alert alert-info" role="alert">
+        <%= get_flash(@conn, :info) %>
+      </p>
+
+      <p class="alert alert-danger" role="alert">
+        <%= get_flash(@conn, :error) %>
+      </p>
       <%= render @view_module, @view_template, assigns %>
-    </section>
+    </main>
     <script
       defer
       src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"

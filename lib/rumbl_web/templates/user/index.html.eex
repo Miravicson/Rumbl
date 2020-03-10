@@ -1,23 +1,14 @@
-<!-- <%= import Routes, only: [user_path: 3] %> -->
-<h1 class="m-5 text-xl font-extrabold text-purple-700">Listing Users</h1>
-<div class="bg-purple-700" style="height: 1px"></div>
+<h1 class="">Listing Users</h1>
 
-<div class="grid grid-cols-3 gap-5 p-5">
-  <div class="font-bold">Name</div>
-  <div class="font-bold">User Name</div>
-  <div class="font-bold">Action</div>
-</div>
-<div class="bg-purple-700" style="height: 1px"></div>
-<div class="grid grid-cols-3 gap-5 p-5">
+<ul class="users_list">
+  <li>
+    <span>Name</span> <span>Username</span> <span><span>Action</span></span>
+  </li>
   <%= for user <- @users do %>
-  <div class="font-hairline">
-    <b><%= first_name(user) %></b> (<%= user.id %>)
-  </div>
-  <div class="font-hairline"><b><%= user.username%></b></div>
-  <div class="font-hairline">
-    <button class="button text-white bg-purple-500">
-      <%= link "View", to: Routes.user_path(@conn, :show, user.id) %>
-    </button>
-  </div>
+  <li>
+    <span><%= first_name(user) %></span> <span><%= user.username%></span>
+    <span><button><%= link "Show", to: Routes.user_path(@conn, :show, user.id) %></button></span>
+  </li>
   <% end %>
+</ul>
 </div>

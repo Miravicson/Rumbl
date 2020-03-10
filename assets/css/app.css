@@ -1,4 +1,52 @@
-/* This file is for your main application css. */
-@import "https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css";
-@import "https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css";
-/* @import "./phoenix.css"; */
+@import "./header.css";
+@import "./users.css";
+:root {
+  box-sizing: content-box;
+  font-size: 0.875rem;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*+* {
+  margin-top: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited
+a:hover,
+a:active {
+  color: black;
+}
+
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  width: 1080px;
+  min-width: 80px;
+  flex-direction: column;
+  padding: 0 1rem 0;
+}
+
+h1, 
+h2, 
+h3 {
+  display: center;
+  font-size: larger;
+  margin: 0.5rem 0 0.5rem;
+}

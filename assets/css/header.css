@@ -1,0 +1,28 @@
+nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0 1rem 0;
+  border: 1px solid black;
+  min-height: 40px;
+  margin: 0;
+  width: 100%;
+}
+
+
+
+nav > ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  margin: 0;
+}
+
+nav ul li + li {
+  margin-top: 0;
+  margin-left: 1rem;
+}
+
+.nav__brand {
+  display: flex;
+  align-items: center;
+}
